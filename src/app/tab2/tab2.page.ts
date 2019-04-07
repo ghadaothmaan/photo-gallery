@@ -1,5 +1,7 @@
+import { PhotoPreviewPage } from './../photo-preview/photo-preview.page';
 import { Component } from '@angular/core';
 import { PhotoService } from '../services/photo.service';
+import { NavParams, NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab2',
@@ -7,7 +9,7 @@ import { PhotoService } from '../services/photo.service';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
-  constructor(public photoService: PhotoService) {}
+  constructor(public photoService: PhotoService, public nav: NavController) {}
 
   // TODO: implement native camera work
   // and to do so cordova must work first and idk why it doesnt tbh!?
@@ -15,8 +17,9 @@ export class Tab2Page {
     this.photoService.toastClicked();
   }
 
-  // TODO: finish it ig
+  // TODO: finish it i guess
   previewPhoto() {
+    this.nav.navigateForward('photo-preview');
     this.photoService.openPreview();
   }
 }

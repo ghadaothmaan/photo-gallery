@@ -19,6 +19,8 @@ export class PhotoService {
     'assets/img/3.png'
   ];
 
+  public photo: string = 'assets/img/3.png';
+
   constructor(
     public toastController: ToastController,
     public alertController: AlertController,
@@ -27,11 +29,12 @@ export class PhotoService {
 
   // TODO: fix? sth to do with cordova and native ionic
   // and guess what i cant get it work either
-  // but tbh i need to look more into it
-  // or maybe look into routing?
+  // need to look more into it and maybe look into routing?
+  // oookay a mess! but this prints out clicked
+  // and the other actually navigates, which btw is wrong if i do say so myself
   openPreview() {
     console.log('clicked');
-    this.photoViewer.show(this.photos[0]);
+    // this.photoViewer.show(this.photos[0]);
   }
 
   // present toast with options
@@ -59,8 +62,4 @@ export class PhotoService {
 
     await alert.present();
   }
-}
-
-class Photo {
-  data: any;
 }

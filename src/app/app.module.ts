@@ -10,11 +10,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { PhotoViewer } from '@ionic-native/photo-viewer/ngx';
+import { PhotoPreviewPage } from './photo-preview/photo-preview.page';
+import { PhotoPreviewPageModule } from './photo-preview/photo-preview.module';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot(),
+    AppRoutingModule,
+    PhotoPreviewPageModule
+  ],
   providers: [
     StatusBar,
     SplashScreen,
